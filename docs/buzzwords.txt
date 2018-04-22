@@ -1,4 +1,4 @@
 Isomorphic code
 dynamic vs static language
 type safety
-
+Compiler vs. transpiler
