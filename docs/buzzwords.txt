@@ -1,0 +1,4 @@
+Isomorphic code
+dynamic vs static language
+type safety
+
