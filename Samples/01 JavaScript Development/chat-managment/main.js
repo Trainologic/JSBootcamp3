@@ -4,11 +4,15 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+var i=0;
 function main(){
-
+    i++;
+    console.log('start ',i);
+    main();
+    console.log('finish ',i);
 }
 
-rl.question('input your selection: ', processInput1);
+ rl.question('input your selection: ', processInput1);
 
 function processInput1(input){
     console.log('finished 1', input);
