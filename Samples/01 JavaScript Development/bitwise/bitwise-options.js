@@ -34,16 +34,17 @@ function buildOptions() {
     }
 }
 
-
-is(pita, 'hummus') // false
-is(pita, 'hummus') // true
-
-
-function is(obj, option) {
-
+function is(bitwiseValue, option) { // bool
+    var bit = bitwiseOptions[option];
+    return !!(bitwiseValue & bit);
 }
 
-function set() {
 
+function set(bitwiseValue, option) { // new optionsValue
+    return (bitwiseValue | bitwiseOptions[option]);
+}
+
+function unset(bitwiseValue, option) {
+    return (bitwiseValue ^ bitwiseOptions[option]);
 }
 
