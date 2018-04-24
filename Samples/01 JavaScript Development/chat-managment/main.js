@@ -8,7 +8,10 @@ var i=0;
 function main(){
     i++;
     console.log('start ',i);
-    main();
+
+    while(true){
+        rl.question('input your selection: ', processInput1);
+    }
     console.log('finish ',i);
 }
 
