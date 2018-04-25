@@ -4,8 +4,9 @@ var myObject = {
     keyC: {}
 };
 
-myObject['keyD'] = null;
+var objKey = 'keyD';
+myObject[objKey] = null;
 
 for(var key in myObject) {
-    console.log(myObject[key]);
+    console.log(key);
 }
