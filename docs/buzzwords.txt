@@ -4,3 +4,4 @@ type safety
 Compiler vs. transpiler
 callback hell
 eventLoop
+Syntactic sugar
