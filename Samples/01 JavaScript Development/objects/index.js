@@ -10,3 +10,6 @@ myObject[objKey] = null;
 for(var key in myObject) {
     console.log(key);
 }
+
+// delete keyA
+delete myObject['keyA'];
