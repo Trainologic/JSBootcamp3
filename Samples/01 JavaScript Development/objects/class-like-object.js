@@ -12,10 +12,23 @@ function User(name, age, hairColor) {
     this.name = name;
     this.age = age;
     this.hairColor = hairColor;
+
+
+   /* return {
+        name: name,
+        age: age,
+        hairColor: hairColor
+    }*/
 }
 
-User.prototype.changeHairColor = function (color) {
-    this.hairColor = color;
+User.prototype={
+    changeHairColor: function (color) {
+        this.hairColor = color;
+    }
+
 };
 
-var users = [new User('Itay'), new User('Yoval'), new User('Yossi')];
+
+var users = [new User('Itay',25, 'red'), new User('Yoval'), new User('Yossi')];
+users[0].changeHairColor('blue');
+console.log(users[0]);
