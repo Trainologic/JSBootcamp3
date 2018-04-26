@@ -4,18 +4,32 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+const Users = require('./users');
+
 var i=0;
-function main(){
+let doctorUsers;
+let profUsers;
+
+// IIFE
+(function init(){
+    doctorUsers = new Users('dr.');
+    profUsers = new Users('prof.');
+
     i++;
     console.log('start ',i);
 
-    while(true){
+   /* while(true){
         rl.question('input your selection: ', processInput1);
-    }
-    console.log('finish ',i);
-}
+    }*/
+    console.log('finish ');
 
- rl.question('input your selection: ', processInput1);
+    main();
+})();
+
+function main(){
+    doctorUsers.addUser('dfg');
+    rl.question('input your selection: ', processInput1);
+}
 
 function processInput1(input){
     console.log('finished 1', input);
@@ -43,6 +57,103 @@ function processInput2(input){
         });
     });
 });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,30 +1,27 @@
-function users() {
+function Users(prefix) {
     // private property
     var users='';
 
     //public properties
     return {
-        addUser
-    }
-
-    this.addUser;
+        version: '1.0.0',
+        addUser: addUser
+    };
 
     // private methods
-    function addUser(user) {
+    /*var addUser = function (user) {
         users = users+user;
+        privateFn();
+    };*/
+
+    function addUser(user) {
+        users = users+prefix+user;
+        privateFn();
     }
 
-    function removeUser(user) {
-        addUser(user);
+    function privateFn() {
+        console.log("I'm a private!");
     }
 }
 
-// public
-users.prototype = {
-    addUser: function addUser(user) {
-        users = users + user;
-    }
-}
-
-module.exports = users;
-
+module.exports= Users;
