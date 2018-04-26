@@ -24,4 +24,8 @@ function Users(prefix) {
     }
 }
 
+function User(){
+
+}
+
 module.exports= Users;
