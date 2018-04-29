@@ -1,3 +1,5 @@
+const {BTree} = require("./btree");
+
 test();
 
 function test() {
@@ -14,7 +16,7 @@ function test() {
         tree.add(80);
 
         var itr = tree.search(125);
-        assert(itr.value(), 125);
+        assert("Validating search", itr.value(), 125);
 
         var expected = [125, 150, 200];
         var actual = [itr.value()];
