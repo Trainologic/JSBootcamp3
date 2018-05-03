@@ -26,36 +26,49 @@
     <li class="">Two</li>
     <li>Three</li>
     <li>Four</li>
-    <li>Four</li>
+    <li>
+        <ul>
+            <li>ff</li>
+            <li>dd</li>
+            <li>ss</li>
+            <li>aa</li>
+        </ul>
+    </li>
     <li>Four</li>
     <li>Four</li>
     <li>Four</li>
 </ul>
 
 
-
 <style>
-    ul{
+    ul {
         border: 1px solid red;
     }
-    ul > li:not(:last-child){
+
+    ul > li:not(:last-child) {
         margin-bottom: 10px;
     }
-    ul > li:nth-child(3n){
+
+    ul > li:nth-child(3n) {
         font-weight: 600;
     }
-    li:hover{
+    ul > li:nth-child(3n) + li {
+        font-weight: 600;
+        color: blue;
+    }
+
+    li:hover {
         color: red;
         font-size: 22px;
     }
 
-    a:visited{
+    a:visited {
         text-decoration: none;
         opacity: 0.5;
-        color:red;
+        color: red;
     }
 
-    li{
+    li {
         transition: all 0.2s;
     }
 </style>
