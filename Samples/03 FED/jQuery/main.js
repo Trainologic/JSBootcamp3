@@ -28,5 +28,14 @@ $(document).ready(function () {
 
     console.log(res);
     console.log(res.length);
+
+    let bulbs = $('.bulbs .circle');
+    let i = 0;
+    setInterval(function () {
+        let prev = (i-1)<0?9:i-1;
+        $(bulbs[i]).addClass('active');
+        $(bulbs[prev]).removeClass('active');
+        i = (++i)>9?0:i;
+    }, 200);
 });
 
