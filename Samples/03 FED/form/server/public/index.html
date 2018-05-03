@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My form</title>
+
+    <script type="application/javascript" src="/static/index.js"></script>
+</head>
+<body onload="onLoad()">
+    <div id="formWrapper">
+        <form id="myForm" method="GET" action="/get">
+            <div id="usernameField">
+                <label for="username">User name:</label>
+                <input type="text" size="12" id="username" name="username" />
+            </div>
+            <div id="passwordField">
+                <label for="password">Password:</label>
+                <input type="password" size="12" id="password" name="password" />
+            </div>
+            <div id="genderField">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
+                    <option value="3">Why not both</option>
+                </select>
+            </div>
+            <input type="submit" value="Submit" />
+        </form>
+        <div id="error" style="color: red"></div>
+    </div>
+</body>
+</html>
