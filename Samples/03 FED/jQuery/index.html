@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div>
+        <input type="button" id="myInput" class="active lite-red"/>
+    </div>
+    <div>
+        <div id="foo">
+            ssdf
+        </div>
+    </div>
+</div>
+
+<input type="text" id="myInput2" class="lite-red"/>
+<a href="google.com">GOOGLE</a>
+<ul>
+    <li>One</li>
+    <li class="">Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Four</li>
+    <li>Four</li>
+    <li>Four</li>
+    <li>Four</li>
+</ul>
+
+
+
+<style>
+    ul{
+        border: 1px solid red;
+    }
+    ul > li:not(:last-child){
+        margin-bottom: 10px;
+    }
+    ul > li:nth-child(3n){
+        font-weight: 600;
+    }
+    li:hover{
+        color: red;
+        font-size: 22px;
+    }
+
+    a:visited{
+        text-decoration: none;
+        opacity: 0.5;
+        color:red;
+    }
+
+    li{
+        transition: all 0.2s;
+    }
+</style>
+</body>
+</html>
