@@ -1,9 +1,13 @@
-Isomorphic code
 dynamic vs static language
 type safety
+Hoisting
+IIFE - Immediatelly invoked function expression
+Module pattern
+
 Compiler vs. transpiler
 callback hell
 eventLoop
 Syntactic sugar
 TDD - Test Driven Development
-Hoisting
+
+Isomorphic code
