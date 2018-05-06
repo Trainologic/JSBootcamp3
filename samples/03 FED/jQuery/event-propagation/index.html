@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div {
+            background-color: red;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button>Click me</button>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $("div").click(function(e){
+            console.log("div clicked", this);
+            console.log("div clicked", e.target);
+        })
+
+        $("button").click(function(e){
+            console.log("button clicked");
+
+            //e.stopPropagation();
+        })
+    </script>
+</body>
+</html>
+

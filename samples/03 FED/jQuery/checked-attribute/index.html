@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="checkbox">
+    <button class="print">Print</button>
+    <button class="toggle-checked-attr">Toggle Checked</button>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        //var input = $("input");
+
+        var checkbox = document.querySelector("input");
+
+        var buttonPrint = document.querySelector("button.print");
+        buttonPrint.addEventListener("click", function(){
+            console.log(checkbox.checked);
+        });
+
+        var button = document.querySelector("button.toggle-checked-attr");
+        button.addEventListener("click", function(){
+            var $checkbox = $(checkbox);
+            if($checkbox.attr("checked") !== undefined) {
+                $checkbox.removeAttr("checked")
+            }
+            else {
+                $checkbox.attr("checked", "xxx");
+            }
+        });
+
+    </script>
+</body>
+</html>

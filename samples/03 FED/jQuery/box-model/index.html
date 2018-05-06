@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .parent {
+            width: 40em;
+            height: 20em;
+            background-color: red;
+        }
+
+        .child {
+            display: inline-block;
+            width: 20em;
+            height: 20em;
+            box-sizing: border-box;
+        }
+
+        .left {
+            background-color: blue;
+        }
+
+        .left:hover {
+            border: 4px solid black;
+        }
+
+        .right {
+            background-color: green;
+        }
+
+        .buttons button {
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button>OK</button><button>Delete</button>
+    </div>
+
+    <div class="parent">
+        <div class="child left"></div><div class="child right"></div>
+    </div>
+</body>
+</html>

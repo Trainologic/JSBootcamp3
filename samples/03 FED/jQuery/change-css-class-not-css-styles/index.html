@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <button>Click me</button>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        var button = $("button");
+        button.click(function(){
+            //button.css("color", "red");
+            button.addClass("bold");
+        });
+    </script>
+</body>
+</html>

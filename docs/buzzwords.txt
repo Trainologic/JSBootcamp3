@@ -3,6 +3,8 @@ type safety
 Hoisting
 IIFE - Immediatelly invoked function expression
 Module pattern
+CSS box model
+Event propagation
 
 Compiler vs. transpiler
 callback hell
