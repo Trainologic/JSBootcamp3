@@ -1,3 +1,4 @@
+Isomorphic code
 dynamic vs static language
 type safety
 Hoisting
@@ -11,5 +12,4 @@ callback hell
 eventLoop
 Syntactic sugar
 TDD - Test Driven Development
-
-Isomorphic code
+Observer pattern
