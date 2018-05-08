@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .list{
+            background-color: yellow;
+        }
+        .list .active{
+            font-weight: 800;
+        }
+
+        /* high level */
+        .component-subcomponent__state{
+
+        }
+
+        .list-item-active{
+
+        }
+
+        /* mid level */
+        .btn{
+            border-radius: 3px;
+
+        }
+        .btn-lg{
+            width: 30px;
+        }
+
+        /* low level */
+        .padding-sm{
+            padding: 5px;
+        }
+
+        .color-red{
+            color: red;
+        }
+
+        button + button{
+            background-color: aqua;
+        }
+
+        /* children */
+        ul li:hover {
+            color: red;
+        }
+
+        .children input:last-of-type{
+            border-color: aqua;
+        }
+
+
+    </style>
+</head>
+<body>
+<button class="btn btn-lg">I'm a btn</button>
+<button class="btn btn-lg">I'm a better btn</button>
+<div class="menu">
+    <ul class="menu-list">
+        <li>1</li>
+        <li class="menu-list-active">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<div class="children">
+    <input type="button" value="one">
+    <input type="button" value="two">
+    <div class="active"></div>
+</div>
+
+<label class="color-red padding-sm"></label>
+</body>
+</html>
