@@ -4,12 +4,16 @@ body {
 
 * {
     box-sizing: border-box;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin: 0;
 }
 
 .wrapper {
     height: 100%;
+}
+header{
+    background-color: aqua;
+    height: 30px;
 }
 
 .clear {
@@ -17,12 +21,13 @@ body {
 }
 
 .main {
-    height: 100%;
     /*overflow: auto;*/
     position: relative;
+    height: calc(100vh - 60px);
 }
 
 .main aside {
+    background-color: aliceblue;
     /*float: left;
     width: 5em;
     height: 80%;*/
@@ -35,15 +40,21 @@ body {
 
 .main .chat {
     left: 5em;
+    height: 100%;
     position: absolute;
 }
 
 .main .chat .history {
-
+    background-color: antiquewhite;
+    height: calc(100% - 50px);
+    width: calc(100vw - 5em);
 }
 
 .main .chat .input {
-
+    background-color: cornflowerblue;
+    position: relative;
+    font-size: 35px;
+    height: 50px;
 }
 
 .main:after {
@@ -53,8 +64,10 @@ body {
 }
 
 footer {
+    background-color: darksalmon;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    height: 30px;
 }
