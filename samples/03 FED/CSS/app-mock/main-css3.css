@@ -1,0 +1,61 @@
+body {
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    /*border: 1px solid black;*/
+    margin: 0;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    /*flex: 0 1;*/
+    background-color: aqua;
+}
+
+.clear {
+    clear: both;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.main aside {
+    flex-basis: 10em;
+    background-color: aliceblue;
+}
+
+.main .chat {
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .chat .history {
+    background-color: antiquewhite;
+    flex: 10 0;
+}
+
+.main .chat .input {
+    flex: 1 0;
+    background-color: cornflowerblue;
+}
+
+/*.main:after {
+    content: '';
+    display: block;
+    clear: both;
+}*/
+
+footer {
+    background-color: darksalmon;
+}
