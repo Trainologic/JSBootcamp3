@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+}
+
+*{
+ border: 1px solid black;
+    margin: 0;
+}
+
+.wrapper{
+    height: 100%;
+}
+
+.clear{
+    clear: both;
+}
+
+.main{
+    height: 100%;
+    /*overflow: auto;*/
+}
+
+.main aside{
+    float: left;
+    width: 5em;
+    height: 100%;
+}
+
+.main .chat{
+
+}
+
+.main .chat .history{
+
+}
+
+.main .chat .input{
+
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

@@ -22,10 +22,13 @@
         }
 
         /* mid level */
-        .btn{
+        button {
             border-radius: 3px;
 
         }
+
+        .btn
+
         .btn-lg{
             width: 30px;
         }
@@ -52,6 +55,16 @@
             border-color: aqua;
         }
 
+        p > span {
+            color: red;
+        }
+
+        #parent > div {
+            width: 50px;
+            height: 50px;
+
+            background-color: red;
+        }
 
     </style>
 </head>
@@ -74,5 +87,11 @@
 </div>
 
 <label class="color-red padding-sm"></label>
+
+<div id="parent">
+    <div>Div1</div>
+    <div>Div2</div>
+    <div>Div3</div>
+</div>
 </body>
 </html>
