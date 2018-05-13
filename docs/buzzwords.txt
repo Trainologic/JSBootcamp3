@@ -19,3 +19,26 @@ CSS positioning
 Layouting - Table, CSS positioning, Flexbox, Grid layout
 inline vs. block vs. inline-block
 px vs. em vs. rem vs. vh vs. %
+
+EMCAScript 6/7/8
+----------------
+let/const
+class
+Fat Arrow function/lambda expression
+async/await
+destructing object
+ES6 modules import/export
+
+Typescript
+----------
+Type
+Interface
+Accessibility
+
+OOP
+----
+Encapsulation
+Inheritance (reuse)
+Polymorphism - overriding
+Overloading 
+
