@@ -28,6 +28,7 @@ Fat Arrow function/lambda expression
 async/await
 destructing object
 ES6 modules import/export
+Promise API
 
 Typescript
 ----------
