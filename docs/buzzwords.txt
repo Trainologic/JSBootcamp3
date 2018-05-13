@@ -4,7 +4,6 @@ type safety
 Hoisting
 IIFE - Immediatelly invoked function expression
 Module pattern
-CSS box model
 Event propagation
 
 Compiler vs. transpiler
@@ -13,3 +12,10 @@ eventLoop
 Syntactic sugar
 TDD - Test Driven Development
 Observer pattern
+
+Flex
+CSS box model
+CSS positioning
+Layouting - Table, CSS positioning, Flexbox, Grid layout
+inline vs. block vs. inline-block
+px vs. em vs. rem vs. vh vs. %

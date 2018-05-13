@@ -1,0 +1,14 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node build.js dev"
+  },
+  "dependencies": {
+    "colors": "^1.2.5",
+    "http-server": "^0.11.1",
+    "opener": "^1.4.3"
+  }
+}

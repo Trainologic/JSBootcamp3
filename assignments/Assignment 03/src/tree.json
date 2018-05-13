@@ -1,0 +1,30 @@
+[
+  {
+    "type": "group",
+    "name": "Friends",
+    "items": [
+      {
+        "type": "group",
+        "name": "Best Friends",
+        "items": [
+          {
+            "type": "user",
+            "name": "Tommy"
+          }
+        ]
+      },
+      {
+        "type": "user",
+        "name": "Udi"
+      }
+    ]
+  },
+  {
+    "type": "user",
+    "name": "Ori"
+  },
+  {
+    "type": "user",
+    "name": "Roni"
+  }
+]
