@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Game</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<form action="/login" method="post">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <button type="button" onclick="login()">Login</button>
+</form>
+<h4 class="loading"></h4>
+<div id="gameWrapper">
+
+</div>
+<button onclick="createNewPost();">Create new Post</button>
+
+<script type="application/javascript" src="/static/index.js"></script>
+</body>
+</html>
