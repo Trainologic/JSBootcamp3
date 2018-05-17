@@ -7,7 +7,7 @@ class Edit extends Component {
     }
 
     render() {
-        return (<h3>New</h3>
+        return (<h3>Edit of id: {this.props.match.params.id}</h3>
 
         );
     }

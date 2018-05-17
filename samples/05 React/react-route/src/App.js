@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter, Link, Route} from 'react-router-dom';
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import List from "./components/List";
+import Edit from "./components/Edit";
 import New from "./components/New";
 
 class App extends Component {
@@ -12,6 +13,11 @@ class App extends Component {
         this.state = {
             data: [{title: 'sdf', id: 789}, {title: 'gggg', id: 456}]
         };
+    }
+
+    getEditLinks() {
+        return this.state.data.map(item =>
+            (<Link to={`/edit/${item.id}`}>Edit item {item.id}</Link>));
     }
 
     render() {
@@ -24,15 +30,18 @@ class App extends Component {
                         <nav>
                             <ul className='list'>
                                 <li><Link to='/list'>Lists</Link></li>
-                                <li><Link to='/new'>New</Link></li>
+                                <li>{this.getEditLinks()}</li>
                             </ul>
                         </nav>
                     </header>
                     <section>
-                        <Route path='/list' name='list' render={({match}) => (
-                            <List match={match} data={this.state.data}/>
-                        )}/>
-                        <Route path='/new' name='new' component={New}/>
+                        <Switch>
+                            <Route path='/list' name='list' render={({match}) => (
+                                <List match={match} data={this.state.data}/>
+                            )}/>
+                            <Route path='/edit/:id' name='edit-id' component={Edit}/>
+                            <Route path='/edit' name='edit' component={New}/>
+                        </Switch>
                     </section>
                 </div>
             </BrowserRouter>
