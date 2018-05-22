@@ -1,3 +1,27 @@
+enum ANIMAL_FAMILY{
+    MEMEL,
+    REPTILE,
+    BIRD
+}
+
+enum GENDER{
+    MALE,
+    FEMALE,
+    ITS_COMPLICATED
+}
+
+let family:ANIMAL_FAMILY;
+family = ANIMAL_FAMILY.BIRD;
+
+interface IPerson{
+    gender: GENDER
+}
+
+let person:IPerson = {
+    gender: GENDER.ITS_COMPLICATED
+};
+
+
 interface ICRUD<T> {
     add: (item: T) => boolean
     remove: (item: T) => boolean
