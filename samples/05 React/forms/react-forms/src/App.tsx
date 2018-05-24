@@ -7,6 +7,7 @@ import LoginModal from "./components/LoginModal";
 
 export
 enum ERROR_MSG{
+    none,
     allGood,
     credentials,
     locked
@@ -14,7 +15,8 @@ enum ERROR_MSG{
 
 interface IAppState {
     loggedInUser: IUser | null,
-    errorMsg: ERROR_MSG
+    errorMsg: ERROR_MSG,
+    counter: number
 }
 
 class App extends React.Component<{}, IAppState> {
@@ -24,7 +26,8 @@ class App extends React.Component<{}, IAppState> {
 
         this.state = {
             loggedInUser: null,
-            errorMsg: ERROR_MSG.allGood
+            errorMsg: ERROR_MSG.none,
+            counter: 0
         }
     }
 
@@ -34,6 +37,7 @@ class App extends React.Component<{}, IAppState> {
     };
 
     onLoginSubmitHandler =(user:IUser)=>{
+
         if(this.auth(user)){
             this.setState({
                 loggedInUser: user,
@@ -41,10 +45,19 @@ class App extends React.Component<{}, IAppState> {
             })
         }
         else{
-            this.setState({
-                loggedInUser: null,
-                errorMsg: ERROR_MSG.credentials
-            })
+            if(this.state.counter===2){
+                this.setState({
+                    loggedInUser: null,
+                    errorMsg: ERROR_MSG.locked
+                });
+            }
+            else {
+                this.setState((prev) => ({
+                    loggedInUser: null,
+                    errorMsg: ERROR_MSG.credentials,
+                    counter: this.state.counter + 1
+                }));
+            }
         }
     };
 
