@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {IUser} from 'models/Entities';
 import Field from './Field';
+import {ERROR_MSG} from "../App";
 
 interface ILoginModalProps {
-    onSubmit: (u:IUser) => boolean
+    onSubmit: (u: IUser) => void,
+    loginStatus: ERROR_MSG
 }
 
 interface ILoginModalState {
@@ -12,6 +14,11 @@ interface ILoginModalState {
 
 export default class LoginModal extends React.Component<ILoginModalProps, ILoginModalState> {
 
+    private messages = {
+        [ERROR_MSG.credentials]: 'username or password are wrong!',
+        [ERROR_MSG.locked]: 'you\'re locked!!',
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -19,7 +26,7 @@ export default class LoginModal extends React.Component<ILoginModalProps, ILogin
         }
     }
 
-    updateField = (fieldName: string, value: string)=>{
+    updateField = (fieldName: string, value: string) => {
 
         this.setState(prevState => {
             //1
@@ -35,7 +42,7 @@ export default class LoginModal extends React.Component<ILoginModalProps, ILogin
                 // 1
                 //user: prevState.user
                 // 2
-                prop:'sdf',
+                prop: 'sdf',
                 user: {
                     ...this.state.user,
                     [fieldName]: value
@@ -44,18 +51,21 @@ export default class LoginModal extends React.Component<ILoginModalProps, ILogin
         })
     };
 
-    submitHandler = (e:React.MouseEvent<HTMLButtonElement>) =>{
+    submitHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         this.props.onSubmit(this.state.user);
     };
 
+
+
     render() {
         return (
-            <div>
-                    <Field name={'username'} type={'text'} onChange={this.updateField}/>
-                    <Field name={'password'} type={'password'} onChange={this.updateField}/>
+            <form>
+                <Field name={'username'} type={'text'} onChange={this.updateField}/>
+                <Field name={'password'} type={'password'} onChange={this.updateField}/>
 
-                <button type="submit" onClick={this.submitHandler}>Login</button>
-            </div>
+                <button type="button" onClick={this.submitHandler}>Login</button>
+                <p style={{color: 'red'}}>{this.messages[this.props.loginStatus]}</p>
+            </form>
         );
     }
 }
