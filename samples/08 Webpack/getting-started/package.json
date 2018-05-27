@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4"
+  }
+}
