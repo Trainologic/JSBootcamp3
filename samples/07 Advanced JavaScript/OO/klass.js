@@ -1,4 +1,4 @@
-let Mammel = klass({
+let Mammal = klass({
     _constructor: function (name) {
         this.name = name;
         this.saying = 'nothing';
@@ -17,16 +17,15 @@ let Cat = klass({
     say: function () {
         console.log(this.name + ': ' + this.saying);
         console.log('numberOfLifes: ' + this.numberOfLifes);
-    }
-}, Mammel);
+    },
+    age: 3
+}, Mammal);
 
 
 function klass(childDefinitionObj, parent) {
 
-    var tmp = function () {
-    };
-
     function extend(parent) {
+        var tmp = function () {};
         tmp.prototype = parent.prototype;
         this.prototype = new tmp();
         this.uber = parent.prototype;
@@ -59,8 +58,11 @@ function klass(childDefinitionObj, parent) {
     return child;
 }
 
-var mam = new Mammel('groot');
+var mam = new Mammal('groot');
 var cat = new Cat('garfield');
+
+var cat2 = new Cat('garfield2');
+cat2.age =4;
 
 mam.say();
 cat.say()
