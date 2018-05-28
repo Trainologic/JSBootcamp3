@@ -5,6 +5,7 @@ Hoisting
 IIFE - Immediatelly invoked function expression
 Module pattern
 Event propagation
+CLI - Command Line Interface
 
 Compiler vs. transpiler
 callback hell
@@ -43,3 +44,18 @@ Inheritance (reuse)
 Polymorphism - overriding
 Overloading 
 
+React
+-----
+Render
+Component's State (state+props vs this.state)
+
+
+Webpack
+-------
+Alternatives: Browserify, Rollup, Fusebox, Webmake
+
+
+Module Types
+-------------
+ES6 Modules - import/export
+CJS Modules - require/exports
