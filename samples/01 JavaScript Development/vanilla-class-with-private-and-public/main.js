@@ -14,14 +14,14 @@ let MyClass = (function () { // IIFE
 
     //constructor
     function MyClass(x, y) {
-        privateDS.push(x);
-        privateDS.push(y);
+        var privateNonStatic = 'sdf';
+        this.x ='asd';
     }
 
     // public method
     MyClass.prototype.getPrivateDS= function () {
         privateFn();
-        return privateDS;
+        this.x;
     };
 
     //private method
@@ -33,4 +33,6 @@ let MyClass = (function () { // IIFE
 })();
 
 let myclass = new MyClass(100,200);
-console.log(myclass.getPrivateDS());
+let myclass2 = new MyClass(100,200);
+
+console.log(myclass.getPrivateDS() === myclass2.getPrivateDS());
