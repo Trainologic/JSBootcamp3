@@ -10,11 +10,11 @@ module.exports = (function () {
     function Groups() {
         this._rootGroup = new Node(new Group('root'));
 
+        mock(this._rootGroup);
+
         for(let group of this._rootGroup){
             console.log(group);
         }
-
-        mock(this._rootGroup);
     }
 
     // public methods

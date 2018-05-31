@@ -4,7 +4,11 @@ const NodeFactory = function (getUniqueKey) {
         this._children = {};
         this._parent = parent;
         this[Symbol.iterator] = function* () {
+            yield this._data;
 
+            for (let child in this._children) {
+                yield* this._children[child];
+            }
         }
     }
 
@@ -62,7 +66,7 @@ const NodeFactory = function (getUniqueKey) {
     }
 
     function hasChildren() {
-        return Object.keys(this._children).length;
+        return !!Object.keys(this._children).length;
     }
 
     function isSingleChild() {
@@ -74,11 +78,11 @@ const NodeFactory = function (getUniqueKey) {
     }
 
     function getAll() {
-        return this.dfsScan(()=>true);
+        return this.dfsScan(() => true);
     }
 
     function flatten(mergeFn) {
-        if(this.isSingleChild()) {
+        if (this.isSingleChild()) {
             mergeFn(this._parent._data, this._data);
             this.remove();
             return true;

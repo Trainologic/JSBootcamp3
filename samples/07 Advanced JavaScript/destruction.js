@@ -5,6 +5,31 @@ const data = {
         {id: 5, username: 'rrrt'},
         {id: 6, username: 'rrrt'},
     ],
+    groups: [
+        {
+            id: 3, name: 'werwre', messages: [
+                {id: 22, body: 'sdffff'},
+                {id: 242, body: 'trtrtrt'}]
+        },
+        {
+            id: 33, name: 'werwre', messages: [
+                {id: 2442, body: 'sdffff'},
+                {id: 242, body: 'trtrtrt'}]
+        },
+        {
+            id: 34, name: 'werwre', messages: [
+                {id: 242, body: 'sdffff'},
+                {id: 2432, body: 'trtrtrt'}]
+        }
+    ]
+};
+const data2 = {
+    users: [
+        {id: 3, username: 'rrrt', nickname: 'fff'},
+        {id: 4, username: 'rrrt', nickname: 'fff'},
+        {id: 5, username: 'rrrt'},
+        {id: 6, username: 'rrrt'},
+    ],
     groups: {
         3: {
             name: 'werwre', messages: [
@@ -12,19 +37,35 @@ const data = {
                 {id: 242, body: 'trtrtrt'}]
         },
         33: {
-            name: 'werwre', messages: [
+            id: 33, name: 'werwre', messages: [
                 {id: 2442, body: 'sdffff'},
-                {id: 242, body:'trtrtrt'}]
+                {id: 242, body: 'trtrtrt'}]
         },
         34: {
-            name: 'werwre', messages: [
+            id: 34, name: 'werwre', messages: [
                 {id: 242, body: 'sdffff'},
                 {id: 2432, body: 'trtrtrt'}]
         }
+    }
+};
 
-    };
+/*function* () {
+    let x=0, y=0;
+}*/
 
-for (let msg of ({groups}=data)) {
+function* myGen(data) {
+    for(let key in data){
+        for(let msg of data[key].messages){
+            yield msg;
+        }
+    }
+}
+
+({groups}=data2)
+
+let msgIt = myGen(groups);
+
+for (let msg of msgIt) {
     console.log(msg)
 }
 
