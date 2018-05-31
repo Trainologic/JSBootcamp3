@@ -5,62 +5,68 @@ const data = {
         {id: 5, username: 'rrrt'},
         {id: 6, username: 'rrrt'},
     ],
-    groups: [
-        {
-            id: 3, name: 'werwre', messages: [
+    groups: {
+        3: {
+            name: 'werwre', messages: [
                 {id: 22, body: 'sdffff'},
                 {id: 242, body: 'trtrtrt'}]
         },
-        {
-            id: 33, name: 'werwre', messages: [
+        33: {
+            name: 'werwre', messages: [
                 {id: 2442, body: 'sdffff'},
-                {id: 242, body: 'trtrtrt'}]
+                {id: 242, body:'trtrtrt'}]
         },
-        {
-            id: 34, name: 'werwre', messages: [
+        34: {
+            name: 'werwre', messages: [
                 {id: 242, body: 'sdffff'},
                 {id: 2432, body: 'trtrtrt'}]
         }
-    ]
-};
+
+    };
+
+for (let msg of ({groups}=data)) {
+    console.log(msg)
+}
 
 // let groups= data.groups;
 let {groups: [, {messages: [message]}], users: [, , user]} = data;
 
 // alias
-let {groups: [{messages: messagesOfFirstGroup},,,]}= data;
+let {groups: [{messages: messagesOfFirstGroup}, , ,]} = data;
 console.log(messagesOfFirstGroup)
 
 // default
-let {users:[{nickname:n1='no nickname'},{nickname:n2='no nickname'},{nickname:n3='no nickname'}]}= data;
+let {users: [{nickname: n1 = 'no nickname'}, {nickname: n2 = 'no nickname'}, {nickname: n3 = 'no nickname'}]} = data;
 
 /*console.log(n1);
 console.log(n2);
 console.log(n3);*/
-for(let {nickname:n={no:'nickname'}} of data.users){
+for (let {nickname: n = {no: 'nickname'}} of data.users) {
     console.log(n);
 }
 
 function doSomething(options) {
-    let color = options.color || {opacity:'sdf'};
+    let color = options.color || {opacity: 'sdf'};
 }
 
-function doSomething2({color= {opacity:'sdf'}}) {
+function doSomething2({color = {opacity: 'sdf'}}) {
     console.log(color);
 }
 
-noop = ()=>{};
+noop = () => {
+};
 
-function provider(dataUsage=()=>{}) {
+function provider(dataUsage = () => {
+}) {
     // data query =>
     dataUsage({
-        users:[],
-        groups:[],
-        error:{}
+        users: [],
+        groups: [],
+        error: {}
     })
 }
 
-provider(({users, groups})=>{
+provider(({users, groups}) => {
     // console.log(users);
 })
 
@@ -73,26 +79,24 @@ let [username, age, pass, ...other] = 'momo,45,pssss,sdf,sdf,eeee'.split(',');
 console.log(username, age, pass);
 console.log(...other);
 
-let arr = [4,5];
+let arr = [4, 5];
 let tmp = arr[0];
 arr[0] = arr[1];
-arr[1] =tmp;
+arr[1] = tmp;
 
 arr = [arr[1], arr[0]];
-let a=1, b=2;
+let a = 1, b = 2;
 /*
 let tmp = a;
 a = b;
 b =tmp;
 */
 
-console.log(a,b);
-[b,a]=[a,b];
+console.log(a, b);
+[b, a] = [a, b];
 let users;
 ({users} = data);
-console.log(a,b);
-
-
+console.log(a, b);
 
 
 // console.log(groups);
