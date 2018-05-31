@@ -3,6 +3,9 @@ const NodeFactory = function (getUniqueKey) {
         this._data = data;
         this._children = {};
         this._parent = parent;
+        this[Symbol.iterator] = function* () {
+
+        }
     }
 
     Node.prototype = {

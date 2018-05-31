@@ -1,3 +1,4 @@
+// currying
 function calc(operation) {
     return function (a, b) {
         switch (operation) {
