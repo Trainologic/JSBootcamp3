@@ -1,4 +1,5 @@
-Isomorphic code
+Isomorphic code = SSR = Universal code
+SEO - Search Engine Optimization 
 dynamic vs static language
 type safety
 Hoisting
@@ -59,3 +60,11 @@ Module Types
 -------------
 ES6 Modules - import/export
 CJS Modules - require/exports
+
+The value of this
+
+Strict mode
+-----------
+Setting a variable without declaring first
+The value of this inside global function --> Window/undefined
+Trying to modify a readonly property
