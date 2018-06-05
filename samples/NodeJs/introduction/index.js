@@ -1,5 +1,3 @@
-let mem = [];
+const hello = require('./build/Release/addon');
 
-setInterval(() => {
-    mem.push({'foo': 'bar'});
-}, 1000);
+console.log(hello.sayHello());
