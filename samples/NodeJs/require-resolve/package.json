@@ -1,0 +1,19 @@
+{
+  "name": "require-resolve",
+  "version": "1.0.0",
+  "description": "sdfsdfsdf",
+  "main": "index.js",
+  "dependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  },
+  "scripts": {
+    "test": "npm test",
+    "start": "npm i && npm build",
+    "build": "server start"
+  },
+  "author": "",
+  "license": "ISC"
+}
