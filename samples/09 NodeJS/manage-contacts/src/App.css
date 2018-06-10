@@ -1,0 +1,17 @@
+.App {
+    padding: 1em;
+}
+
+.App .loading {
+    display: none;
+}
+
+.App .loading.active {
+    display: block;
+}
+
+.App .error {
+    background-color: red;
+    color: white;
+    padding: 0.25em;
+}

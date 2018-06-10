@@ -1,0 +1,12 @@
+{
+  "extends": ["tslint-react"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  },
+  "rules": {
+    "jsx-no-lambda": false
+  }
+}
