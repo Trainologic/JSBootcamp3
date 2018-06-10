@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "nodemon": "^1.17.5",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts-ts": "2.16.0"
@@ -20,5 +21,6 @@
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
     "typescript": "^2.9.1"
-  }
+  },
+  "proxy": "http://localhost:4000/"
 }

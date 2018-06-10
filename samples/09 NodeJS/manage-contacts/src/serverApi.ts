@@ -3,10 +3,8 @@ import {delay} from "./helpers";
 export async function getAllContacts(): Promise<Contact[]> {
     await delay(1000);
 
-    const contacts = [
-        {id:1, name: "Ori"},
-        {id:2, name: "Roni"},
-    ];
+    const res = await fetch("/api/contact");
+    const contacts = await res.json();
 
     return contacts;
 }

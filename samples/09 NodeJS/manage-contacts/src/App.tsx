@@ -14,9 +14,7 @@ class App extends React.Component {
     public render() {
         console.log("render");
 
-        const {loading} = appStore;
         let {updatingContactName} = appStore;
-        const errorMessage = (appStore.error && appStore.error.message) || "";
 
         if(!updatingContactName){
             updatingContactName = "";
@@ -26,11 +24,9 @@ class App extends React.Component {
             <div className="App">
                 <h1>Manage Contacts</h1>
 
-                <h2 className="error">{errorMessage}</h2>
+                {this.renderError()}
 
-                <div className={classNames("loading", {active: loading})}>
-                    Loading ...
-                </div>
+                {this.renderLoading()}
 
                 <ul>
                     {this.getContactsLIs()}
@@ -56,6 +52,24 @@ class App extends React.Component {
                 <button onClick={() => appService.select(c)}>Select</button>
             </li>)
         )
+    }
+
+    private renderError(): any {
+        const errorMessage = (appStore.error && appStore.error.message) || "";
+
+        if(errorMessage){
+            return (<h2 className="error">{errorMessage}</h2>);
+        }
+    }
+
+    private renderLoading(): any {
+        const {loading} = appStore;
+
+        if(loading){
+            return (<div className={classNames("loading", {active: loading})}>
+                Loading ...
+            </div>);
+        }
     }
 }
 

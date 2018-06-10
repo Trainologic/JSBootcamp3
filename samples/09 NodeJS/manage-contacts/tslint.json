@@ -7,6 +7,7 @@
     ]
   },
   "rules": {
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "jsx-wrap-multiline": false
   }
 }
