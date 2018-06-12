@@ -5,6 +5,9 @@ import {Api} from './api';
 import {UsersList} from "./components/UsersList";
 import {Loader} from "./components/Loader";
 import {CreateUser} from "./components/CreateUser";
+import io from 'socket.io-client';
+
+const socket =io('http://localhost:4000');
 
 class App extends Component {
 
@@ -27,6 +30,10 @@ class App extends Component {
 
                 this.stopLoading();
             });
+
+        // socket.emit('global', 'i am groot');
+        socket.on('global', (msg)=>console.log(msg));
+        // socket.on('connections', (username)=>console.log(`hello ${username}!`));
     }
 
     stopLoading() {
@@ -51,6 +58,20 @@ class App extends Component {
                 }));
                 this.stopLoading();
             });
+    };
+
+    login = (username)=>{
+        socket.emit('login', username);
+
+        if (username!=='user3') {
+            socket.emit('join-group', username, 'group1');
+        } else {
+            socket.emit('join-group', username, 'group2');
+        }
+    };
+
+    leaveGroup = ()=>{
+        socket.emit('leave-group', 'group1');
     }
 
     render = () => {
@@ -60,6 +81,10 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
+                <button onClick={this.login.bind(this,'user1')}>LoginUser1</button>
+                <button onClick={this.login.bind(this,'user2')}>LoginUser2</button>
+                <button onClick={this.login.bind(this,'user3')}>LoginUser3</button>
+                <button onClick={this.leaveGroup.bind(this,'user1')}>LeaveGroupUser1</button>
                 {this.state.isLoading ? (<Loader/>) :
                     (<section className='app'>
                         <CreateUser onUserCreate={this.onUserCreateHandler}/>
