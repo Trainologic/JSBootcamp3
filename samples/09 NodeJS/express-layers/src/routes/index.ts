@@ -1,3 +1,3 @@
-import HelloWorldRoute from './hello';
+import TranslateRoute from './translate';
 
-export {HelloWorldRoute};
+export {TranslateRoute};
