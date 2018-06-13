@@ -14,4 +14,8 @@ router.get('/spanish', (req, res) => {
    res.send('Hola, Bandejo');
 });
 
+router.get('/colombian', (req, res) => {
+    res.send('I <3 Crack');
+});
+
 export default router;
