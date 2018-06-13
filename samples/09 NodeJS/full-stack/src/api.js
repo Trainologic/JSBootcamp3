@@ -1,5 +1,6 @@
 export class Api {
-    static baseUrl = 'http://localhost:4000';
+    // static baseUrl = 'http://localhost:4000';
+    static baseUrl = '';
 
     static getUsers() {
         return this.get('/users');

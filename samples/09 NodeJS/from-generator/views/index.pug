@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h2 hello #{username}
+    .active#my-id
+      .loader sdfsdf
+        a(href='google.com' active) GOOGLE
+        p.
+          sdfsdf
+          sdfsdf
+    - var time=1
+    .case
+      case time
+        when 0
+          p good evening!
+        when 1
+          p good morning!
+
+    ul.iterations
+      each val in [0,1,2]
+        li=val
+
+    - for(var i=0; i<10; i++)
+        p #{i}
+
+
+

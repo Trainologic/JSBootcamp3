@@ -6,7 +6,7 @@ const usersRouter = require('./usersRouter');
 const httpServer = require('http').Server(app);
 const io = require('socket.io')(httpServer);
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {

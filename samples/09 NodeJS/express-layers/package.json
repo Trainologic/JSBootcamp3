@@ -1,0 +1,26 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon -e ts -w ./src -x npm run build",
+    "build": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "joi": "^13.4.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/joi": "^13.0.8",
+    "@types/node": "^10.3.2",
+    "nodemon": "^1.17.5"
+  }
+}
