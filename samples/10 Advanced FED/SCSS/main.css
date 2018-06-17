@@ -1,0 +1,67 @@
+/*.dark{
+  .title {
+    background-color: $box-bg-color-dark;
+  }
+  .body{
+    background-color: lighten($box-bg-color-dark, 20%);
+  }
+}*/
+/*.light{
+  .title {
+    background-color: $box-bg-color-light;
+  }
+  .body{
+    background-color: lighten($box-bg-color-light, 20%);
+  }
+}*/
+.box, .my-box {
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lucida Sans";
+}
+.box.danger, .danger.my-box {
+  border-color: red;
+}
+.box:hover, .my-box:hover {
+  border-color: blue;
+}
+.box .box-text, .my-box .box-text, .box .body, .my-box .body, .box .title, .my-box .title {
+  padding: 20px;
+  color: white;
+}
+.box .hero, .my-box .hero {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+}
+.box .title, .my-box .title {
+  font-size: 30px;
+}
+.dark .box .title, .dark .my-box .title {
+  background-color: #333333;
+}
+.light .box .title, .light .my-box .title {
+  background-color: lightgray;
+}
+.box .body, .my-box .body {
+  border-radius: 0 0 5px 5px;
+  color: black;
+}
+.dark .box .body, .dark .my-box .body {
+  background-color: #4d4d4d;
+}
+.light .box .body, .light .my-box .body {
+  background-color: white;
+}
+
+.my-box {
+  box-shadow: 0 0 20px black;
+  width: 200px;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

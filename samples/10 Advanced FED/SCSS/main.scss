@@ -1,0 +1,75 @@
+@import "variables";
+@import "mixins";
+
+$box-bg-color: $box-bg-color-light;
+
+/*.dark{
+  .title {
+    background-color: $box-bg-color-dark;
+  }
+  .body{
+    background-color: lighten($box-bg-color-dark, 20%);
+  }
+}*/
+
+/*.light{
+  .title {
+    background-color: $box-bg-color-light;
+  }
+  .body{
+    background-color: lighten($box-bg-color-light, 20%);
+  }
+}*/
+
+.box {
+  border: 1px solid gray;
+  border-radius: $box-radius;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lucida Sans";
+
+  &.danger {
+    border-color: red;
+  }
+
+  &:hover {
+    border-color: blue;
+  }
+
+  .box-text {
+    padding: $box-padding;
+    color: white;
+  }
+
+  .hero {
+    width: 100%;
+    height: 100%;
+    @include border-top($box-radius);
+  }
+
+  .title {
+    @include with-theme(background-color, bg);
+
+    font-size: 30px;
+    @extend .box-text;
+
+  }
+
+  .body {
+    @include with-theme(background-color, bg-secondary);
+
+    @include border-bottom($box-radius);
+    @extend .box-text;
+    color: black;
+  }
+}
+
+.my-box{
+  @extend .box;
+
+  box-shadow: 0 0 20px black;
+  width: 200px;
+  margin-top: 20px;
+
+}
+

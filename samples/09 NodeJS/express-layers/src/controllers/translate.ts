@@ -13,3 +13,19 @@ export default async function TranslateController(req: Request, res: Response) {
         res.status(500).send(`Bad request ${e}`);
     }
 }
+
+const c = (action, parmsBound) => async (req: Request, res: Response)=>{
+    try {
+
+        const params= parmsBound(req) || [];
+
+        const serviceResult = await action(...params);
+
+        res.json({message: serviceResult});
+    } catch (e) {
+        res.status(500).send(`Bad request ${e}`);
+    }
+}
+
+export const TranslateController2 =
+    c(services.TranslateService, (req)=>[req.body.phrase, req.params.lang]);

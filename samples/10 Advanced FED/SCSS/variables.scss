@@ -1,0 +1,12 @@
+$box-radius: 5px;
+$box-padding: 20px;
+$box-border-color: gray;
+$box-bg-color-dark: lighten(black, 20%);
+$box-bg-color-light: lightgray;
+
+$themes: (dark: (
+            bg:lighten(black, 20%),
+            bg-secondary:lighten(black, 30%),
+            fg:white),
+        light:(
+                bg:lightgray, bg-secondary:lighten(lightgray, 20%), fg:black));
