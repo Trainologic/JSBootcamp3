@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index 1</title>
+</head>
+<body>
+<h1>Index 1</h1>
+
+<button onclick="postMessage()">POST</button>
+<script>
+
+    const worker= new SharedWorker('shared-worker.js');
+
+    function postMessage(){
+        worker.port.postMessage('hey Im index 1!');
+    }
+
+    worker.port.onmessage = (e)=> {
+        console.log(e.data);
+    }
+
+</script>
+</body>
+</html>

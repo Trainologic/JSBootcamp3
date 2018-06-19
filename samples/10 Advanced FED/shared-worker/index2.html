@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index 2</title>
+</head>
+<body>
+<h1>Index 2</h1>
+
+<button onclick="postMessage()">POST</button>
+<script>
+    const worker= new SharedWorker('shared-worker.js');
+
+    function postMessage(){
+        worker.port.postMessage(()=>{true;});
+    }
+
+    worker.port.onmessage = (e)=> {
+        console.log(e.data);
+    }
+
+</script>
+</body>
+</html>
