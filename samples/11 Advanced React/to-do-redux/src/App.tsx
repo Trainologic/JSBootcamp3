@@ -27,10 +27,12 @@ class App extends React.Component<IAppProps, IAppState> {
     };
 
     public handleAddTask = () => {
+        /*
         const task: IToDoItem = {
             complete: false,
             task: this.state.input
         };
+        */
     };
 
     public render() {
