@@ -3,7 +3,7 @@ const resource= {
     posts: {
         title: 'posts',
         urls:[
-            'http://localhost:63342/service-worker/index.html?_ijt=t65fr4ij96g93fk3qqkper15as',
+            'http://localhost:8080/index.html',
             'https://jsonplaceholder.typicode.com/posts'
         ]
     }
