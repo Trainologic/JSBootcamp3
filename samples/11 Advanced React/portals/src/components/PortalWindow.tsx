@@ -17,7 +17,7 @@ class PortalWindow extends React.Component {
 
     componentDidMount() {
         this.portalWindow = window.open('', '', 'width=450,height=450,left=200,top=200');
-        
+
         this.portalWindow.document.body.appendChild(this.el);
     }
 }
