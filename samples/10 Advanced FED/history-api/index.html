@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="page" data-url="/home">
+        <h1>Home</h1>
+
+        <a href="/about">About</a>
+    </div>
+
+    <div class="page" data-url="/about">
+        <h1>About</h1>
+
+        <a href="/home">Home</a>
+    </div>
+
+    <script>
+        let activePage = null;
+        let pages = [];
+
+        for(const page of document.querySelectorAll(".page")){
+            pages.push({
+                element: page,
+                url: page.getAttribute("data-url")
+            })
+        }
+
+        for(const link of document.querySelectorAll("a")){
+            link.addEventListener("click", function(e){
+                e.preventDefault();
+
+                navigate(link.getAttribute("href"), true);
+            })
+        }
+
+        console.log(pages);
+
+        window.addEventListener("popstate", function(e){
+            console.log("POPSTATE", e, location.pathname);
+
+            navigate(location.pathname, false);
+        });
+
+        function navigate(url, shouldPushState) {
+            const page = pages.find(p => p.url == url);
+            if(!page){
+                throw new Error("Unknown url " + url);
+            }
+
+            if(activePage){
+                activePage.element.classList.remove("active");
+            }
+
+            activePage = page;
+
+            activePage.element.classList.add("active");
+
+            if(shouldPushState) {
+                window.history.pushState({}, null, activePage.url);
+            }
+        }
+
+        navigate("/home");
+
+        // document.querySelector("button").addEventListener("click", function(){
+        //     window.history.pushState({}, null, "/blabla");
+        // });
+        //
+        // window.addEventListener("popstate", function(e){
+        //     console.log("POPSTATE", e);
+        // })
+    </script>
+</body>
+</html>

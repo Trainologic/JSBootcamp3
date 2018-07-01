@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button class="dec">Dec</button>
+    <span></span>
+    <button class="inc">Inc</button>
+
+    <script>
+        document.querySelector("button.dec").addEventListener("click", function(){
+            counter = counter - 1;
+            save();
+            render();
+        });
+
+        document.querySelector("button.inc").addEventListener("click", function(){
+            counter = counter + 1;
+            save();
+            render();
+        });
+
+        let counter = 0;
+        const span = document.querySelector("span");
+
+        load();
+        render();
+
+        function render(){
+            span.innerText = counter;
+        }
+
+        function save() {
+            localStorage.setItem("counter", JSON.stringify(counter));
+        }
+
+        function load(){
+            const json = localStorage.getItem("counter");
+            if(json) {
+                counter = JSON.parse(json);
+            }
+            else {
+                counter = 0;
+            }
+        }
+    </script>
+</body>
+</html>
