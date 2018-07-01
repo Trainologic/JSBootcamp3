@@ -68,3 +68,6 @@ Strict mode
 Setting a variable without declaring first
 The value of this inside global function --> Window/undefined
 Trying to modify a readonly property
+
+Race condition
+Context switching
