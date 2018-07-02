@@ -6,3 +6,26 @@ WHERE film.film_id IN (SELECT film_category.film_id FROM sakila.film_category
 						JOIN category ON category.category_id = film_category.category_id
 						WHERE category.name = 'Action')
 LIMIT 10;
+
+
+
+SELECT count(film_actor.actor_id) as number_of_actors , film.title FROM sakila.film_actor
+JOIN film ON film.film_id = film_actor.film_id
+GROUP BY film_actor.film_id
+HAVING number_of_actors >5
+ORDER BY number_of_actors DESC
+
+
+SELECT g1.name AS group_name, g2.name AS parent_name
+FROM groups AS g1
+JOIN groups AS g2 ON g2.id= g1.parent_id
+
+SELECT g1.name AS group_name, g2.name AS parent_name
+FROM groups AS g1, groups AS g2
+WHERE g2.id= g1.parent_id
+
+
+SELECT count(g1.name) AS group_name, g2.name AS parent_name
+FROM groups AS g1, groups AS g2
+WHERE g2.id= g1.parent_id
+GROUP BY parent_name
