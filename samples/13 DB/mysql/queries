@@ -1,0 +1,8 @@
+SELECT film.title, actor.first_name
+FROM film_actor AS f_a
+JOIN film ON film.film_id = f_a.film_id
+JOIN actor ON actor.actor_id = f_a.actor_id
+WHERE film.film_id IN (SELECT film_category.film_id FROM sakila.film_category
+						JOIN category ON category.category_id = film_category.category_id
+						WHERE category.name = 'Action')
+LIMIT 10;
