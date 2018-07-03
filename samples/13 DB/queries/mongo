@@ -1,0 +1,20 @@
+
+// basic query
+db.users.find()
+
+// aggregate pipe => sort
+db.users.aggregate({$sort:{username:1}})
+
+// aggregate => filter by age > 20 and then sort by username
+db.users.aggregate([{$match:{age:{$gt:20}}},{$sort:{username:1}]})
+
+// filter, sort and then aggregate by username
+db.users.aggregate([{$match:{age:{$gt:20}}},{$sort:{username:1}},{$group:{_id: '$username',total:{$sum:1}}}])
+
+// add users to 'admins' group
+db.groups.update({name:'admins'},{$push:{users:{$each:db.users.find({username:'user1'}, {_id:1}).map(user=>user._id)}}})
+
+// get users objects from group 'admins'
+db.users.find({_id:{$in: db.groups.findOne({name:'admins'},{users:1,_id:0}).users}})
+// get group 'admins' and populates users field with actual users
+db.groups.aggregate([{$lookup:{ from:'users', localField:'users', foreignField:'_id', as:'users'}}]).pretty()
