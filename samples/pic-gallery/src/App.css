@@ -1,0 +1,51 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.App input[type=file] {
+    display: none;
+}
+
+.App .cell {
+    height: 10rem;
+    width: 100%;
+    background-color: lightgray;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.App .cell-plus {
+    font-size: 8em;
+    cursor: pointer;
+}
+
+.App .cell-pic {
+    background-color: rgb(245, 245, 245);
+}
+
+.App .cell-empty {
+    background-color: white;
+}
+
+.App .line {
+    display: flex;
+    flex-direction: row;
+}
+
+.App .cell-pic img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 9rem;
+}
