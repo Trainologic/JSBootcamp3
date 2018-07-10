@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>Fetch Data from twitter</button>
+
+    <script>
+        document.querySelector("button").addEventListener("click", async function(){
+            // const res = await fetch("http://localhost:8081/api/twitts");
+
+            const script = document.createElement("script");
+            script.src = "http://localhost:8081/api/twitts?callback=g";
+            document.querySelector("body").appendChild(script);
+        });
+
+        function g(data){
+            console.log(data);
+        }
+    </script>
+
+    <!--<script src="http://localhost:8081/api/twitts"></script>-->
+</body>
+</html>
