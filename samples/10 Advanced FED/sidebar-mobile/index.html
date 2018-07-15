@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .side-bar {
+            background-color: lightblue;
+            width: 15em;
+            flex-shrink: 0;
+        }
+
+        .side-bar ul {
+            list-style: none;
+        }
+
+        .side-bar li {
+            border-bottom: 1px solid;
+            padding: 1em;
+        }
+
+        .content {
+            background-color: lightcoral;
+            width: 100%;
+        }
+
+        .content .header {
+            display: none;
+        }
+
+        @media screen and (max-width: 375px) {
+            .side-bar {
+                position: absolute;
+                left: -15em;
+                height: 100%;
+            }
+
+            .content .header {
+                display: flex;
+                background-color: black;
+                color: white;
+                justify-content: flex-end;
+                padding-right: 0.25em;
+            }
+
+            .content .header svg {
+                fill: currentColor;
+                zoom: 2;
+            }
+
+            .side-bar-slide-in {
+                animation-name: animation-side-bar-slide-in;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+
+            .side-bar-slide-out {
+                animation-name: animation-side-bar-slide-out;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes animation-side-bar-slide-in {
+                from {left: -15em;}
+                to {left: 0;}
+            }
+
+            @keyframes animation-side-bar-slide-out {
+                from {left: 0em;}
+                to {left: -15em;}
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="side-bar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Login</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector(".content .header svg");
+        const sideBar = document.querySelector(".side-bar");
+        let sideBarVisible = false;
+
+        button.addEventListener("click", function(){
+            sideBarVisible = !sideBarVisible;
+
+            if(sideBarVisible) {
+                sideBar.classList.add("side-bar-slide-in");
+                sideBar.classList.remove("side-bar-slide-out");
+            }
+            else {
+                sideBar.classList.add("side-bar-slide-out");
+                sideBar.classList.remove("side-bar-slide-in");
+            }
+        });
+    </script>
+</body>
+</html>
