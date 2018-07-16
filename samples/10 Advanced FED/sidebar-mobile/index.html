@@ -25,8 +25,8 @@
 
         .side-bar {
             background-color: lightblue;
-            width: 15em;
             flex-shrink: 0;
+            transform: translateX(-100%);
         }
 
         .side-bar ul {
@@ -35,7 +35,7 @@
 
         .side-bar li {
             border-bottom: 1px solid;
-            padding: 1em;
+            padding: 1em 3em 1em 0.5em;
         }
 
         .content {
@@ -50,7 +50,6 @@
         @media screen and (max-width: 375px) {
             .side-bar {
                 position: absolute;
-                left: -15em;
                 height: 100%;
             }
 
@@ -80,13 +79,13 @@
             }
 
             @keyframes animation-side-bar-slide-in {
-                from {left: -15em;}
-                to {left: 0;}
+                from {transform: translateX(-100%);}
+                to {transform: translateX(0);}
             }
 
             @keyframes animation-side-bar-slide-out {
-                from {left: 0em;}
-                to {left: -15em;}
+                from {transform: translateX(0);}
+                to {transform: translateX(-100%);}
             }
         }
     </style>
@@ -97,6 +96,7 @@
             <li>Home</li>
             <li>About</li>
             <li>Login</li>
+            <li>very very very long list item</li>
         </ul>
     </div>
 

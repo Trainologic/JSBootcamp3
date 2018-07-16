@@ -1,0 +1,11 @@
+body {
+    padding: 0.5em;
+}
+
+li {
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    background-color: black;
+    margin-bottom: 0.25em;
+}

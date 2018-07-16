@@ -1,0 +1,10 @@
+<h1>Hello Angular</h1>
+
+<app-toolbar></app-toolbar>
+
+<ul>
+  <li *ngFor="let contact of contacts; let i=index;">
+    <app-contact-details [contact]="contact"
+                         (onContactDelete)="onContactDelete($event)"></app-contact-details>
+  </li>
+</ul>

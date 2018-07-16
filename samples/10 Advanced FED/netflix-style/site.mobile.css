@@ -1,0 +1,6 @@
+@media screen and (max-width: 375px) {
+    ul {
+        white-space: nowrap;
+        overflow: scroll;
+    }
+}
